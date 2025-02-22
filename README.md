@@ -1,0 +1,1 @@
+# duckdb-pyconf-hyd-2025-talk
