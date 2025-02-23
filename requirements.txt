@@ -1,0 +1,10 @@
+duckdb==1.2.0
+Faker==36.1.1
+numpy==2.2.3
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.1
+redis==5.2.1
+six==1.17.0
+tqdm==4.67.1
+tzdata==2025.1
