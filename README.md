@@ -1,5 +1,6 @@
 ## Talk Outline
 
+- Install DuckDB
 - Test Drive
 - DuckDB?. Why and Why Not?
 - Clickstream data dumping
@@ -8,6 +9,10 @@
 - Rill Dashboard 
 - Things you should know 
 - Under the Hood
+
+## Install DuckDB
+
+`curl https://install.duckdb.org | sh`
 
 ## Test Drive
 
@@ -683,6 +688,13 @@ if __name__ == "__main__":
 `https://duckdb.org/docs/clients/python/overview.html`
 
 ## RillData - Dashboard on DuckDB
+
+Rill is the fastest path from data lake to dashboard. Unlike most BI tools, Rill comes with its own embedded in-memory database ( DuckDB ). 
+Data and compute are co-located, and queries return in milliseconds.
+
+`curl https://rill.sh | sh` 
+
+https://github.com/rilldata/rill
 
 ## Things you should know 
 
