@@ -16,6 +16,10 @@
 
 ## Test Drive
 
+`python -m venv env`
+
+`pip install -r requirements.txt`
+
 ## DuckDB?. Why and Why Not?.
 
 ### Why?.
