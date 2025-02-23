@@ -773,5 +773,25 @@ if __name__ == "__main__":
 ### Cookbook style snippets
 https://duckdb.org/docs/guides/overview
 
-
 ## Under the Hood
+DuckDB's speed comes from several key architectural decisions: 
+
+- OLAP Core Concepts - Images [https://www.erp-information.com/online-analytical-processing.html]
+
+- Vectorized Query Execution DuckDB processes data in batches (vectors) rather than row by row, which makes better use of modern CPU features like SIMD instructions and cache lines. This means operations like filtering and aggregation can be performed on multiple values simultaneously. [https://15721.courses.cs.cmu.edu/spring2024/notes/06-vectorization.pdf]
+
+- Column-Oriented Storage Unlike traditional row-oriented databases like SQLite, DuckDB stores data by column rather than by row. This is crucial for analytical queries because: 
+  - Only relevant columns need to be read from disk 
+  - Data compression is more effective since similar values are stored together 
+  - Better CPU cache utilization when scanning columns 
+  [https://pbs.twimg.com/media/GC0Ir4naAAAICpb?format=jpg&name=4096x4096]
+
+- In-Memory Processing DuckDB is designed to work primarily in memory, minimizing disk I/O. While it can handle data larger than available RAM through smart buffering, its performance really shines when working with data that fits in memory. 
+
+- Optimized Query Planning DuckDB includes modern query optimization techniques like: 
+  - Adaptive filtering (pushing down predicates) [https://airbyte.com/data-engineering-resources/predicate-pushdown]
+  - Parallel query execution 
+  - Intelligent join ordering
+  - Advanced statistics usage for better plan selection 
+
+- Zero-Copy Data Sharing When working with tools like Pandas or R, DuckDB can often operate directly on the data without making copies, reducing memory usage and improving performance.
