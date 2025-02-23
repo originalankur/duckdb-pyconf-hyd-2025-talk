@@ -54,6 +54,10 @@
 
 ## Clickstream data dumping
 
+`duckdb events.db`
+
+Execute the below SQL on the duckdb console
+
 ```sql
 CREATE TABLE events (
     event_id VARCHAR,
@@ -543,6 +547,12 @@ def main():
 if __name__ == "__main__":
     main()
 ```
+
+Save above file as `generate_synthetic_ecommerce_data.py` and execute it.
+
+`python generate_synthetic_ecommerce_data.py -n 10000 -o events.json`
+
+`COPY events FROM 'ecommerce_clickstream_data.json' (FORMAT JSON);`
 
 ### SQL Refresher
 
